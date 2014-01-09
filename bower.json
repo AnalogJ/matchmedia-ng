@@ -1,0 +1,23 @@
+{
+  "name": "matchmedia-ng",
+  "version": "0.0.0",
+  "homepage": "http://analogj.github.io/matchmedia-ng/",
+  "authors": [
+    "Jason Kulatunga <jk17@ualberta.ca>"
+  ],
+  "description": "matchmedia-ng demo",
+  "main": "index.html",
+  "keywords": [
+    "matchmedia-ng"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ]
+}
