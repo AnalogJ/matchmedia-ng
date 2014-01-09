@@ -71,6 +71,10 @@ angular.module("matchmedia-ng", []).
 
                 };
             }
+            /**
+             * @param {string} query media query to test.
+             * @returns {mediaQueryList} Returns a boolean.
+             */
             matchmediaService.is = function(query) {
                 logger.log('test query: '+ query);
                 return $window.matchMedia(query).matches;
