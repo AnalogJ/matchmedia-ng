@@ -2,6 +2,7 @@
   "author": "Jason Kulatunga",
   "name": "matchmedia-ng",
   "description": "matchmedia wrapper for AngularJS",
+  "version": "0.0.4",
   "homepage": "https://github.com/AnalogJ/matchmedia-ng",
   "repository": {
     "type": "git",
@@ -11,14 +12,13 @@
   "dependencies": {
     "matchmedia": "~0.1.0"
   },
-  "_release": "3e2eecb40d",
+  "_release": "0.0.4",
   "_resolution": {
-    "type": "branch",
-    "branch": "master",
-    "commit": "3e2eecb40de51872e5320f0fd4d9bf8831b82068"
+    "type": "version",
+    "tag": "0.0.4",
+    "commit": "6820e0627b0d83dd12af66c5ce2cda9045aa802d"
   },
   "_source": "git://github.com/AnalogJ/matchmedia-ng.git",
   "_target": "*",
-  "_originalSource": "matchmedia-ng",
-  "_direct": true
+  "_originalSource": "matchmedia-ng"
 }
