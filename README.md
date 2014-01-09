@@ -27,6 +27,11 @@ They can be used as `onPrint()`, `isPortrait()`, `onLandscape()` etc.
 
 Check out the `github-pages` branch for more the live demo code.
 
+Install
+-----
+
+`bower install matchmedia-ng`
+
 Usage
 -----
 Include [angular.js](//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js) and mediastore-ng.js in your application.
