@@ -1,4 +1,4 @@
-/* matchmedia-ng v0.0.2 | (c) 2014 Jason Kulatunga, Inc. | http://analogj.mit-license.org/
+/* matchmedia-ng v1.0.0 | (c) 2014 Jason Kulatunga, Inc. | http://analogj.mit-license.org/
  */
 'use strict';
 
@@ -126,6 +126,7 @@ angular.module("matchmedia-ng", []).
             }
             return matchmediaService;
         }];
+        return matchmedia;
     })
     .factory('safeApply', ['$rootScope',function($rootScope) {
         return function(fn, $scope) {
