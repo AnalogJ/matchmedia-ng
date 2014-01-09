@@ -30,7 +30,7 @@ Check out the `github-pages` branch for more the live demo code.
 Install
 -----
 
-`bower install matchmedia-ng`
+    bower install matchmedia-ng
 
 Usage
 -----
