@@ -21,6 +21,21 @@
       <script src="components/matchmedia-ng/matchmedia-ng.js"></script>
   </head>
   <body>
+  <style>
+      .green{
+        background-color: darkgreen;
+        font-weight: bold;
+        color:white;
+        transition: background 1s ease;
+      }
+      .red{
+          background-color: darkred;
+          font-weight: bold;
+          color: white;
+          transition: background 1s ease;
+      }
+
+  </style>
     <div class="wrapper">
       <header>
         <h1>Matchmedia-ng</h1>
@@ -39,9 +54,10 @@
         <h3>
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Matchmedia-ng Demo.</h3>
 
-
+<p>The following table is made up of some of the common media query aliases that matchmedia-ng supports. As you resize your window the value column will update automatically.</p>
+<p>Try <a href="javascript:window.print()">print preview</a> to see how javascript can change the page before rendering the print view.</p>
           <div ng-controller="testCtrl">
-              <table class="table table-striped">
+              <table class="table table-striped" ng-show="isScreen">
                   <thead>
                   <tr>
                       <th>#</th>
@@ -55,46 +71,47 @@
                       <td>1</td>
                       <td>onPrint</td>
                       <td>print</td>
-                      <td>{{isPrint}}</td>
+                      <td ng-class="{green: isPrint, red:!isPrint}">{{isPrint}}</td>
                   </tr>
                   <tr>
                       <td>2</td>
                       <td>onScreen</td>
                       <td>screen</td>
-                      <td>{{isScreen}}</td>
+                      <td ng-class="{green: isScreen, red:!isScreen}">{{isScreen}}</td>
                   </tr>
                   <tr>
                       <td>3</td>
                       <td>onPhone</td>
                       <td>(max-width: 767px)</td>
-                      <td>{{isPhone}}</td>
+                      <td ng-class="{green: isPhone, red:!isPhone}">{{isPhone}}</td>
                   </tr>
                   <tr>
                       <td>4</td>
                       <td>onTablet</td>
                       <td>(min-width: 768px) and (max-width: 979px)</td>
-                      <td>{{isTablet}}</td>
+                      <td ng-class="{green: isTablet, red:!isTablet}">{{isTablet}}</td>
                   </tr>
                   <tr>
                       <td>5</td>
                       <td>onDesktop</td>
                       <td>(min-width: 979px)</td>
-                      <td>{{isDesktop}}</td>
+                      <td ng-class="{green: isDesktop, red:!isDesktop}">{{isDesktop}}</td>
                   </tr>
                   <tr>
                       <td>6</td>
                       <td>onPortrait</td>
                       <td>(orientation: portrait)</td>
-                      <td>{{isPortrait}}</td>
+                      <td ng-class="{green: isPortrait, red:!isPortrait}">{{isPortrait}}</td>
                   </tr>
                   <tr>
                       <td>7</td>
                       <td>onLandscape</td>
                       <td>(orientation: landscape)</td>
-                      <td>{{isLandscape}}</td>
+                      <td ng-class="{green: isLandscape, red:!isLandscape}">{{isLandscape}}</td>
                   </tr>
                   </tbody>
               </table>
+              <img src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png" style="max-height:400px; text-align:center" ng-show="isPrint">
           </div>
 
           <script type="text/javascript">
