@@ -53,43 +53,43 @@
                   <tbody>
                   <tr>
                       <td>1</td>
-                      <td>$onPrint</td>
+                      <td>onPrint</td>
                       <td>print</td>
                       <td>{{isPrint}}</td>
                   </tr>
                   <tr>
                       <td>2</td>
-                      <td>$onScreen</td>
+                      <td>onScreen</td>
                       <td>screen</td>
                       <td>{{isScreen}}</td>
                   </tr>
                   <tr>
                       <td>3</td>
-                      <td>$onPhone</td>
+                      <td>onPhone</td>
                       <td>(max-width: 767px)</td>
                       <td>{{isPhone}}</td>
                   </tr>
                   <tr>
                       <td>4</td>
-                      <td>$onTablet</td>
+                      <td>onTablet</td>
                       <td>(min-width: 768px) and (max-width: 979px)</td>
                       <td>{{isTablet}}</td>
                   </tr>
                   <tr>
                       <td>5</td>
-                      <td>$onDesktop</td>
+                      <td>onDesktop</td>
                       <td>(min-width: 979px)</td>
                       <td>{{isDesktop}}</td>
                   </tr>
                   <tr>
                       <td>6</td>
-                      <td>$onPortrait</td>
+                      <td>onPortrait</td>
                       <td>(orientation: portrait)</td>
                       <td>{{isPortrait}}</td>
                   </tr>
                   <tr>
                       <td>7</td>
-                      <td>$onLandscape</td>
+                      <td>onLandscape</td>
                       <td>(orientation: landscape)</td>
                       <td>{{isLandscape}}</td>
                   </tr>
@@ -105,25 +105,25 @@
                   //Panel Controllers
                       .controller('testCtrl', function ($scope, $rootScope, matchmedia) {
                           var unsub = {};
-                          unsub['print'] = matchmedia.$onPrint(function(mediaQueryList){
+                          unsub['print'] = matchmedia.onPrint(function(mediaQueryList){
                               $scope.isPrint = mediaQueryList.matches;
                           }, $scope);
-                          unsub['screen'] = matchmedia.$onScreen(function(mediaQueryList){
+                          unsub['screen'] = matchmedia.onScreen(function(mediaQueryList){
                               $scope.isScreen = mediaQueryList.matches;
                           }, $scope);
-                          unsub['phone'] = matchmedia.$onPhone(function(mediaQueryList){
+                          unsub['phone'] = matchmedia.onPhone(function(mediaQueryList){
                               $scope.isPhone = mediaQueryList.matches;
                           });
-                          unsub['tablet'] = matchmedia.$onTablet( function(mediaQueryList){
+                          unsub['tablet'] = matchmedia.onTablet( function(mediaQueryList){
                               $scope.isTablet = mediaQueryList.matches;
                           });
-                          unsub['desktop'] = matchmedia.$onDesktop( function(mediaQueryList){
+                          unsub['desktop'] = matchmedia.onDesktop( function(mediaQueryList){
                               $scope.isDesktop = mediaQueryList.matches;
                           });
-                          unsub['portrait'] = matchmedia.$onPortrait(function(mediaQueryList){
+                          unsub['portrait'] = matchmedia.onPortrait(function(mediaQueryList){
                               $scope.isPortrait = mediaQueryList.matches;
                           });
-                          unsub['landscape'] = matchmedia.$onLandscape(function(mediaQueryList){
+                          unsub['landscape'] = matchmedia.onLandscape(function(mediaQueryList){
                               $scope.isLandscape = mediaQueryList.matches;
                           });
 
