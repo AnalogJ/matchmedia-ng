@@ -1,4 +1,4 @@
-/* matchmedia-ng v1.0.1 | (c) 2014 Jason Kulatunga, Inc. | http://analogj.mit-license.org/
+/* matchmedia-ng v1.0.2 | (c) 2014 Jason Kulatunga, Inc. | http://analogj.mit-license.org/
  */
 'use strict';
 
@@ -168,9 +168,9 @@ angular.module("matchmedia-ng", []).
             return logger;
         }]
     })
-    .config(function(loggerProvider){
+    .config(['loggerProvider',function(loggerProvider){
         loggerProvider.setDEVMODE(true);
-    });
+    }]);
 
 
 
