@@ -150,7 +150,7 @@ It is possible to override the media queries given for the aliases above by usin
 ```js
 angular.module('myapp', ['matchmedia-ng']).config(['matchmediaProvider', function (matchmediaProvider) {
       matchmediaProvider.rules.phone = "(max-width: 500px)";
-      matchmediaProvider.rules.desktop: = "(max-width: 1500px)";
+      matchmediaProvider.rules.desktop = "(max-width: 1500px)";
    }]);
 
 ```
