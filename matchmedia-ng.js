@@ -170,12 +170,6 @@ angular.module("matchmedia-ng", []).
                 console.log.apply(console, arguments);
             };
             return logger;
-        }]
-    })
-    .config(['loggerProvider',function(loggerProvider){
-        loggerProvider.setDEVMODE(true);
-    }]);
-
-
-
+        }];
+    });
 })(window, window.angular);
