@@ -10,6 +10,6 @@
   },
   "main": "./matchmedia-ng.js",
   "dependencies": {
-    "matchmedia": "~0.1.0"
+    "matchmedia": "~0.2.0"
   }
 }
