@@ -1,5 +1,6 @@
 /* matchmedia-ng v1.0.2 | (c) 2014 Jason Kulatunga, Inc. | http://analogj.mit-license.org/
  */
+(function(window, angular, undefined) {
 'use strict';
 
 angular.module("matchmedia-ng", []).
@@ -10,15 +11,18 @@ angular.module("matchmedia-ng", []).
         ///////////////////////////////////////////////////////////////////////
         /**
          *
-         * these settings can be changed by injecting matchmediaProvider into the config function of your module and
-         * changing the matchmediaProvider.rules with your own rule key value pairs E.G.
+         * these settings can be changed by injecting matchmediaProvider into
+         * the config function of your module and
+         * changing the matchmediaProvider.rules with your own rule key value
+         * pairs E.G.
 
          *  angular.module('app').config(['matchmediaProvider', function (matchmediaProvider) {
          *      matchmediaProvider.rules.phone = "(max-width: 500px)";
          *      matchmediaProvider.rules.desktop: = "(max-width: 1500px)";
          *  }]);
          *
-         * default values taken from twitter bootstrap : https://github.com/twitter/bootstrap/blob/master/less/responsive-utilities.less
+         * default values taken from twitter bootstrap :
+         * https://github.com/twitter/bootstrap/blob/master/less/responsive-utilities.less
          */
         var matchmedia = {
             rules: {
@@ -31,7 +35,7 @@ angular.module("matchmedia-ng", []).
                 landscape : "(orientation: landscape)"
             }
         };
-        matchmedia.$get = ['$window','safeApply', 'logger', function($window,safeApply, logger) {
+        matchmedia.$get = ['$window','safeApply', 'logger', function($window, safeApply, logger) {
 
             logger.log('Creating matchmedia');
 
@@ -43,7 +47,7 @@ angular.module("matchmedia-ng", []).
                     safeApply(function() {
                         cb(mediaQueryList);
                     },$scope);
-                }
+                };
             }
 
             ///////////////////////////////////////////////////////////////////////
@@ -70,7 +74,7 @@ angular.module("matchmedia-ng", []).
                     mediaQueryList.removeListener(handler);
 
                 };
-            }
+            };
             /**
              * @param {string} query media query to test.
              * @returns {mediaQueryList} Returns a boolean.
@@ -78,7 +82,7 @@ angular.module("matchmedia-ng", []).
             matchmediaService.is = function(query) {
                 logger.log('test query: '+ query);
                 return $window.matchMedia(query).matches;
-            }
+            };
 
 
 
@@ -86,48 +90,48 @@ angular.module("matchmedia-ng", []).
             // Aliased Methods
             ///////////////////////////////////////////////////////////////////////
             matchmediaService.onPrint = function(listener, $scope){
-                return matchmediaService.on(matchmedia.rules.print,listener, $scope)
-            }
+                return matchmediaService.on(matchmedia.rules.print,listener, $scope);
+            };
             matchmediaService.onScreen = function(listener, $scope){
-                return matchmediaService.on(matchmedia.rules.screen,listener, $scope)
-            }
+                return matchmediaService.on(matchmedia.rules.screen,listener, $scope);
+            };
             matchmediaService.onPhone = function(listener, $scope){
-                return matchmediaService.on(matchmedia.rules.phone,listener, $scope)
-            }
+                return matchmediaService.on(matchmedia.rules.phone,listener, $scope);
+            };
             matchmediaService.onTablet = function(listener, $scope){
-                return matchmediaService.on(matchmedia.rules.tablet,listener, $scope)
-            }
+                return matchmediaService.on(matchmedia.rules.tablet,listener, $scope);
+            };
             matchmediaService.onDesktop = function(listener, $scope){
-                return matchmediaService.on(matchmedia.rules.desktop,listener, $scope)
-            }
+                return matchmediaService.on(matchmedia.rules.desktop,listener, $scope);
+            };
             matchmediaService.onPortrait = function(listener, $scope){
-                return matchmediaService.on(matchmedia.rules.portrait,listener, $scope)
-            }
+                return matchmediaService.on(matchmedia.rules.portrait,listener, $scope);
+            };
             matchmediaService.onLandscape = function(listener, $scope){
-                return matchmediaService.on(matchmedia.rules.landscape,listener, $scope)
-            }
+                return matchmediaService.on(matchmedia.rules.landscape,listener, $scope);
+            };
 
             matchmediaService.isPrint = function(){
-                return matchmediaService.is(matchmedia.rules.print)
-            }
+                return matchmediaService.is(matchmedia.rules.print);
+            };
             matchmediaService.isScreen = function(){
-                return matchmediaService.is(matchmedia.rules.screen)
-            }
+                return matchmediaService.is(matchmedia.rules.screen);
+            };
             matchmediaService.isPhone = function(){
-                return matchmediaService.is(matchmedia.rules.phone)
-            }
+                return matchmediaService.is(matchmedia.rules.phone);
+            };
             matchmediaService.isTablet = function(){
-                return matchmediaService.is(matchmedia.rules.tablet)
-            }
+                return matchmediaService.is(matchmedia.rules.tablet);
+            };
             matchmediaService.isDesktop = function(){
-                return matchmediaService.is(matchmedia.rules.desktop)
-            }
+                return matchmediaService.is(matchmedia.rules.desktop);
+            };
             matchmediaService.isPortrait = function(){
-                return matchmediaService.is(matchmedia.rules.portrait)
-            }
+                return matchmediaService.is(matchmedia.rules.portrait);
+            };
             matchmediaService.isLandscape = function(){
-                return matchmediaService.is(matchmedia.rules.landscape)
-            }
+                return matchmediaService.is(matchmedia.rules.landscape);
+            };
             return matchmediaService;
         }];
         return matchmedia;
@@ -147,30 +151,25 @@ angular.module("matchmedia-ng", []).
                     $scope.$apply();
                 }
             }
-        }
+        };
     }])
     .provider('logger', function(){
         this.DEVMODE = false;
 
         this.setDEVMODE = function(devmode){
             this.DEVMODE = devmode;
-        }
+        };
 
         this.$get = ['$window',function($window) {
             var DEVMODE = this.DEVMODE;
             var logger = {};
             logger.log = function(){
-                DEVMODE && console.log.apply(console, arguments);
-            }
+                if (DEVMODE) console.log.apply(console, arguments);
+            };
             logger.always = function(){
                 console.log.apply(console, arguments);
-            }
+            };
             return logger;
-        }]
-    })
-    .config(['loggerProvider',function(loggerProvider){
-        loggerProvider.setDEVMODE(true);
-    }]);
-
-
-
+        }];
+    });
+})(window, window.angular);
