@@ -156,8 +156,9 @@ angular.module('myapp', ['matchmedia-ng']).config(['matchmediaProvider', functio
 ```
 
 Logging
-You can enable logging by using the following snippet in your code.
 -----------
+You can enable logging by using the following snippet in your code.
+
 ```js
     .config(['loggerProvider',function(loggerProvider){
         loggerProvider.setDEVMODE(true);
