@@ -160,14 +160,14 @@ angular.module("matchmedia-ng", []).
             this.DEVMODE = devmode;
         };
 
-        this.$get = ['$window',function($window) {
+        this.$get = ['$window', '$log', function($window, $log) {
             var DEVMODE = this.DEVMODE;
             var logger = {};
             logger.log = function(){
-                if (DEVMODE) console.log.apply(console, arguments);
+                if (DEVMODE) $log.info(arguments);
             };
             logger.always = function(){
-                console.log.apply(console, arguments);
+                $log.info(arguments);
             };
             return logger;
         }];
