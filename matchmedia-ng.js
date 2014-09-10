@@ -136,6 +136,36 @@ angular.module("matchmedia-ng", []).
         }];
         return matchmedia;
     })
+    .directive('ajMatchmedia', ['matchmedia', function(matchmedia) {
+        return {
+            restrict: 'E',
+            scope: {
+                'queryMatches': '='
+            },
+            link: function(scope, element, attrs, controllers) {
+                var deregister;
+
+                if (attrs.on) {
+                    if (attrs.on.slice(0, 2) === 'on' && matchmedia[attrs.on] !== 'undefined') {
+                        deregister = matchmedia[attrs.on](function(mediaQueryList) {
+                            scope.queryMatches = mediaQueryList.matches;
+                        });
+                    } else {
+                        deregister = matchmedia.on(attrs.on, function(mediaQueryList) {
+                            scope.queryMatches = mediaQueryList.matches;
+                        });
+                    }
+                    scope.$on('$destroy', deregister);
+                } else if (attrs.is) {
+                    if (attrs.is.slice(0, 2) === 'is' && matchmedia[attrs.is] !== 'undefined') {
+                        scope.queryMatches = matchmedia[attrs.is]();
+                    } else {
+                        scope.queryMatches = matchmedia.is(attrs.is);
+                    }
+                }
+            }
+        };
+    }])
     .factory('safeApply', ['$rootScope',function($rootScope) {
         return function(fn, $scope) {
             $scope = $scope || $rootScope;
