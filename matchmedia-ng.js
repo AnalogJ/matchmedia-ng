@@ -62,18 +62,21 @@ angular.module("matchmedia-ng", []).
              * @returns {function()} Returns a deregistration function for this listener.
              */
             matchmediaService.on = function(query, listener, $scope) {
-                logger.log('adding listener for query: '+ query);
-                var mediaQueryList = $window.matchMedia(query);
-                var handler = createSafeListener(listener, $scope);
-                mediaQueryList.addListener(handler);
-                //immediately return the current mediaQueryList;
-                handler(mediaQueryList);
+                var supportsMatchMedia = $window.matchMedia !== undefined && !!$window.matchMedia('').addListener;
+                if(supportsMatchMedia) {
+                    logger.log('adding listener for query: '+ query);
+                    var mediaQueryList = $window.matchMedia(query);
+                    var handler = createSafeListener(listener, $scope);
+                    mediaQueryList.addListener(handler);
+                    //immediately return the current mediaQueryList;
+                    handler(mediaQueryList);
 
-                return function() {
-                    logger.log('removing listener from query: '+ query);
-                    mediaQueryList.removeListener(handler);
+                    return function() {
+                        logger.log('removing listener from query: '+ query);
+                        mediaQueryList.removeListener(handler);
 
-                };
+                    };
+                }
             };
             /**
              * @param {string} query media query to test.
