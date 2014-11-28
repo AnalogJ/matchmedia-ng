@@ -62,7 +62,7 @@ angular.module("matchmedia-ng", []).
              * @returns {function()} Returns a deregistration function for this listener.
              */
             matchmediaService.on = function(query, listener, $scope) {
-                var supportsMatchMedia = $window.matchMedia !== undefined && !!$window.matchMedia('').addListener;
+                var supportsMatchMedia = $window.matchMedia !== undefined && !!$window.matchMedia('all').addListener;
                 if(supportsMatchMedia) {
                     logger.log('adding listener for query: '+ query);
                     var mediaQueryList = $window.matchMedia(query);
