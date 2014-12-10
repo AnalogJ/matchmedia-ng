@@ -1,4 +1,4 @@
-/* matchmedia-ng v1.0.4 | (c) 2014 Jason Kulatunga, Inc. | http://analogj.mit-license.org/
+/* matchmedia-ng v1.0.5 | (c) 2014 Jason Kulatunga, Inc. | http://analogj.mit-license.org/
  */
 (function(window, angular, undefined) {
 'use strict';
