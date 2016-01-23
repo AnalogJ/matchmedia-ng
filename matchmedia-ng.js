@@ -30,7 +30,7 @@ angular.module("matchmedia-ng", []).
                 screen : "screen",
                 phone : "(max-width: 767px)",
                 tablet : "(min-width: 768px) and (max-width: 979px)",
-                desktop : "(min-width: 979px)",
+                desktop : "(min-width: 980px)",
                 portrait : "(orientation: portrait)",
                 landscape : "(orientation: landscape)"
             }
