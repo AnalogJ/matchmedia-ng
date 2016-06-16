@@ -111,7 +111,7 @@ __on()__
 	
 	matchmedia.on('tv and (min-width: 700px) and (orientation: landscape)', function(mediaQueryList){
 		console.log(mediaQueryList.matches);
-	}
+	})
 
 __is()__
 
