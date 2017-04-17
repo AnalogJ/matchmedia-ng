@@ -144,7 +144,7 @@ The following is a comprehensive list of the media query aliases.
     matchmedia.isPortrait()
     matchmedia.isLandscape()
 
-###Override Aliases
+### Override Aliases
 It is possible to override the media queries given for the aliases above by using a `config` function.
 
 ```js
